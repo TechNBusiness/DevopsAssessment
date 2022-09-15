@@ -1,6 +1,6 @@
-aks_vnet_name = "aksvnet"
+aks_vnet_name = "aks-assessment-vnet"
 
-sshkvsecret = "akssshpubkey"
+sshkvsecret = "aks-ssh-pubkey"
 
 clientidkvsecret = "spn-id"
 
@@ -10,17 +10,17 @@ vnetcidr = ["10.0.0.0/24"]
 
 subnetcidr = ["10.0.0.0/25"]
 
-keyvault_rg = "aksdemo-rg"
+keyvault_rg = "aks-assessment-rg"
 
-keyvault_name = "aksdemocluster-kv"
+keyvault_name = "aks-assessment"
 
-azure_region = "australiaeast"
+azure_region = "eastus"
 
 resource_group = "aksdemocluster-rg"
 
-cluster_name = "aksdemocluster"
+cluster_name = "aks-assessment-cluster"
 
-dns_name = "aksdemocluster"
+dns_name = "aks-assessment-cluster"
 
 admin_username = "aksuser"
 
