@@ -1,5 +1,0 @@
-# Create a resource group in the Azure East US region. 
-az group create --location eastus --name BlueH-Assessment 
-
-# Create an Azure container registry in the RG with other parameters
-az acr create -n blueharvest -g BlueH-Assessment  --sku Standard --admin-enabled true
