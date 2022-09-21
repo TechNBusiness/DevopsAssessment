@@ -21,4 +21,8 @@ spec:
          image: mcr.microsoft.com/Demo-app-mycontainerregistry.azurecr.io/my-app:1.3
          imagePullPolicy: Always
          ports: 
-         - containerPort: 8080                     
+         - containerPort: 8080 
+      volumes:
+         - name: data
+           persistentVolumeClaim:
+             claimName: pvc                      
