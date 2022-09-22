@@ -1,3 +1,4 @@
+# Alternatively to deploying the Azure cloud resources using Terraform, you can choose to deploy the resources using Azure CLI.
 # All command should be executed using Azure CLI or Bash shell from the Azure portal.
 
 # Create a resource group in the Azure East US region. 
@@ -14,4 +15,4 @@ version=$(az aks get-versions -l "East US" --query 'orchestrators[-1].orchestrat
  az aks create --resource-group BlueH-Assessment --name BlueH-cluster --enable-addons monitoring --generate-ssh-keys --location "East US"
 
 # Attach the provisioned container registry to the AKS cluster for image pull requests.
- az aks update -n BlueH-cluster -g BlueH-Assessment --attach-acr blueharvest-registry
+ az aks update -n BlueH-cluster -g BlueH-Assessment --attach-acr blueharvest-registryb
