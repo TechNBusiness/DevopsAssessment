@@ -1,5 +1,17 @@
+# All command should be executed using Azure CLI or Bash shell from the Azure portal.
+
 # Create a resource group in the Azure East US region. 
 az group create --location eastus --name BlueH-Assessment 
 
 # Create an Azure container registry in the RG with other parameters
-az acr create -n blueharvest -g BlueH-Assessment  --sku Standard --admin-enabled true
+az acr create -n blueharvest-registry -g BlueH-Assessment  --sku Standard --admin-enabled true
+
+# To see the Kubernetes version available in the chosen location.
+version=$(az aks get-versions -l "East US" --query 'orchestrators[-1].orchestratorVersion' -o tsv)
+ echo "$version" 
+
+ # Create Azure Kubernetes Service under the chosen resource group and location.
+ az aks create --resource-group BlueH-Assessment --name BlueH-cluster --enable-addons monitoring --generate-ssh-keys --location "East US"
+
+# Attach the provisioned container registry to the AKS cluster for image pull requests.
+ az aks update -n BlueH-cluster -g BlueH-Assessment --attach-acr blueharvest-registry
