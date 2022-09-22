@@ -35,3 +35,6 @@ steps:
     containerRegistry: 'Blue harvest ACR'
     repository: 'my-repo'
     command: 'push'
+
+    
+
